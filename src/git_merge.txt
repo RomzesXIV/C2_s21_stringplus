@@ -1,0 +1,29 @@
+Стандартный набор для отправки изменений на ветке    
+    git add *.c
+	git add *.h
+	git add Makefile
+	git commit -m "add from make"
+  Пушим изменения с указанием на "голову"
+    git push origin <name_branch>
+
+Сравнение веток, если отличий нет, то ничего не выводит
+    git diff develop develop_shelacor
+
+Для загрузки изменений с личной ветки на develop
+  Нахожусь на develop_shelacor
+    git checkout develop
+  Загружаю изменения на ветку develop
+    git merge develop_shelacor
+    make git
+    git push origin develop
+  Возвращаюсь на свою ветку
+    git checkout develop_shelacor
+
+Если нужно получить изменения с ветки develop на свою личную
+  Сначала обновляем локальную  
+    git checkout develop
+    git pull
+  Возвращаемся к себе и сливаем develop с личной
+    git checkout develop_shelacor
+    git merge develop
+    
